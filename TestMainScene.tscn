@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fish.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ZenButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Wisdom.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Fish" parent="." instance=ExtResource( 1 )]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Fish"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -164.0
+margin_top = -464.0
+margin_right = 180.0
+margin_bottom = -288.0
+text = "余固愿为一摸鱼模拟器己酉廿三会有殊然而思自觉摸鱼之事小前途更急于人事改摸鱼模拟器为吃饭选择器始得宽慰"
+
+[node name="Label" type="Label" parent="Fish"]
+margin_left = 392.0
+margin_top = 208.0
+margin_right = 496.0
+margin_bottom = 240.0
+text = "Dibbla"
+
+[node name="Wisdom" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 192.0
+margin_top = 688.0
+margin_right = 400.0
+margin_bottom = 764.0
+align = 1
+valign = 1
+script = ExtResource( 3 )
+
+[node name="ZenButton" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 248.0
+margin_top = 808.0
+margin_right = 351.0
+margin_bottom = 860.0
+
+[connection signal="pressed" from="ZenButton" to="Wisdom" method="_on_ZenButton_pressed"]
+[connection signal="pressed" from="ZenButton" to="ZenButton" method="_on_ZenButton_pressed"]
